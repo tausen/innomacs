@@ -25,6 +25,8 @@
 (add-to-list 'load-path "~/.emacs.d/lib/epl/")
 (add-to-list 'load-path "~/.emacs.d/lib/pkg-info/")
 
+(add-to-list 'load-path "~/.emacs.d/lib/org/")
+
 ;;; MAT init el
 (load "~/.emacs.d/init-web.el")
 (load "~/.emacs.d/init-webmode.el")
