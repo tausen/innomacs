@@ -42,3 +42,6 @@
 [submodule "lib/projectile"]
 	path = lib/projectile
 	url = https://github.com/bbatsov/projectile.git
+[submodule "lib/s"]
+	path = lib/s
+	url = https://github.com/magnars/s.el.git
