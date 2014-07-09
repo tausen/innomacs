@@ -87,6 +87,9 @@
 
 (load "~/.emacs.d/init-ace.el")
 
+;; emacs code browser
+(load "~/.emacs.d/init-ecb.el")
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 (put 'upcase-region 'disabled nil)
