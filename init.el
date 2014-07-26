@@ -49,9 +49,11 @@
 (require 'auto-complete)
 ;(global-auto-complete-mode 1) ; (uncomment to enable by default)
 
-;; Semantic mode
-(add-hook 'semantic-mode-hook (lambda () (global-semantic-idle-summary-mode 1)))
-(add-hook 'semantic-mode-hook (lambda () (global-semantic-idle-completions-mode 1)))
+;; svn for emacs23
+;(add-to-list 'load-path "~/.emacs.d/lib/vc-svn17-el")
+;(require 'vc-svn17)
+
+(require 'fill-column-indicator)
 
 ;; Proper autopair/autoclose parenthesis
 (add-to-list 'load-path "~/.emacs.d/lib/autopair/") ;; comment if autopair.el is in standard load path 
