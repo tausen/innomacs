@@ -38,7 +38,7 @@
 (load "~/.emacs.d/init-projectile.el")
 (load "~/.emacs.d/init-hotkeys.el")
 (load "~/.emacs.d/init-irc.el")
-(load "~/.emacs.d/init-ido.el")
+(load "~/.emacs.d/init-helm.el")
 (load "~/.emacs.d/init-git.el")
 (load "~/.emacs.d/init-w3m.el")
 (load "~/.emacs.d/init-markdown.el")
