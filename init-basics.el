@@ -260,3 +260,8 @@
       (dotimes (k (1- level) str)
         ;; (setq str (concat "\\emsp" str))))))
         (setq str (concat "__" str))))))
+
+(add-to-list 'load-path "~/.emacs.d/lib/makey")
+(add-to-list 'load-path "~/.emacs.d/lib/discover.el")
+(require 'discover)
+(global-discover-mode 1)
