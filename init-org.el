@@ -42,8 +42,8 @@
 (global-set-key (kbd "C-c o a") 'org-agenda)
 
 ;; presentations via org-mode
-(add-to-list 'load-path "~/.emacs.d/lib/epresent")
-(load "~/.emacs.d/lib/epresent/epresent.el")
+;; (add-to-list 'load-path "~/.emacs.d/lib/epresent")
+;; (load "~/.emacs.d/lib/epresent/epresent.el")
 
 ;; drag n drop image into to org-mode buffer
 (add-to-list 'load-path "~/.emacs.d/lib/org-download")
