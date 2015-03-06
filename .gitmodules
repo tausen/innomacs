@@ -135,6 +135,9 @@
 	path = lib/f
 	url = https://github.com/rejeep/f.el.git
     ignore = dirty
+[submodule "lib/org-download"]
+    path = lib/org-download
+    url = git@github.com:abo-abo/org-download.git
 [submodule "lib/discover.el"]
 	path = lib/discover.el
 	url = git@github.com:mickeynp/discover.el.git
