@@ -137,13 +137,13 @@
     ignore = dirty
 [submodule "lib/org-download"]
     path = lib/org-download
-    url = git@github.com:abo-abo/org-download.git
+    url = https://github.com/abo-abo/org-download.git
 [submodule "lib/discover.el"]
 	path = lib/discover.el
-	url = git@github.com:mickeynp/discover.el.git
+	url = https://github.com/mickeynp/discover.el.git
 [submodule "lib/makey"]
 	path = lib/makey
-	url = git@github.com:mickeynp/makey.git
+	url = https://github.com/mickeynp/makey.git
 [submodule "lib/elscreen"]
 	path = lib/elscreen
 	url = https://github.com/knu/elscreen.git
