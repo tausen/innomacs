@@ -54,4 +54,4 @@
   (setq linum-format 'linum-format-func))
 
 ;; Remove the odd padding from buffers (used to show small arrows for line wrap)
-(set-fringe-mode 0)
+;(set-fringe-mode 0)
