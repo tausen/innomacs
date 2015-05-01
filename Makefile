@@ -20,3 +20,6 @@
 
 all:
 	touch custom.el
+	emacs -nw -Q --eval '(byte-recompile-directory "~/.emacs.d" 0)' --eval '(save-buffers-kill-terminal)'
+	cd lib/helm
+	make
