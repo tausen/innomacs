@@ -285,4 +285,48 @@ It expects a properly indented CSS"
    (interactive)
    (shell-command (concat "ssh -p " global-ssh-port " " global-ssh-username "@" global-ssh-host " 'cd " global-ssh-path " && global -u'")))
 
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-d") 'ggtags-set-global-scope)))
+
+(setq ggtags-global-scope nil)
+
+(defun ggtags-set-global-scope (&optional arg)
+  (interactive "P")
+  (if (consp arg)
+      (let ((dummy nil))
+          (setq ggtags-global-scope nil)
+          (message "ggtags-global-scope set to nil"))
+    (let ((dir (read-directory-name "Root directory:")))
+      (setq ggtags-global-scope dir)
+      (message "ggtags-global-scope set to %s" ggtags-global-scope))
+     ))
+
+;; redefine ggtags-global-build-command to add --scope functionality
+(defun ggtags-global-build-command (cmd &rest args)
+  ;; CMD can be definition, reference, symbol, grep, idutils
+  (let ((xs (append (list (shell-quote-argument (ggtags-program-path "global"))
+                          "-v"
+                          (format "--result=%s" ggtags-global-output-format)
+                          (and ggtags-global-scope (format "--scope %s" ggtags-global-scope)) ;; added this
+                          (and ggtags-global-ignore-case "--ignore-case")
+                          (and ggtags-global-use-color
+                               (ggtags-find-project)
+                               (ggtags-project-has-color (ggtags-find-project))
+                               "--color=always")
+                          (and (ggtags-sort-by-nearness-p) "--nearness")
+                          (and (ggtags-find-project)
+                               (ggtags-project-has-path-style (ggtags-find-project))
+                               "--path-style=shorter")
+                          (and ggtags-global-treat-text "--other")
+                          (pcase cmd
+                            ((pred stringp) cmd)
+                            (`definition nil) ;-d not supported by Global 5.7.1
+                            (`reference "--reference")
+                            (`symbol "--symbol")
+                            (`path "--path")
+                            (`grep "--grep")
+                            (`idutils "--idutils")))
+                    args)))
+    (mapconcat #'identity (delq nil xs) " ")))
+
+
 ;; ------------------------------------------------------------
