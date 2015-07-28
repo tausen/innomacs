@@ -202,7 +202,7 @@ It expects a properly indented CSS"
 (setq ac-auto-show-menu nil)
 (setq ac-auto-start nil)
 
-;; Auto-completion etc. using gtags (requires gnu global, http://www.gnu.org/software/global/, and pygments plug-in parser https://github.com/yoshizow/global-pygments-plugin)(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "M-i") 'ac-complete-gtags)))
+;; Auto-completion etc. using gtags (requires gnu global, http://www.gnu.org/software/global/, and pygments plug-in parser https://github.com/yoshizow/global-pygments-plugin)
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "M-i") 'ac-complete-gtags)))
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-.") 'ggtags-find-tag-dwim)))
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-j") 'ggtags-find-definition)))
@@ -229,10 +229,10 @@ It expects a properly indented CSS"
 (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C--") 'ggtags-grep)))
 
 ;; TODO: figure out how to use this
-(setq eldoc-documentation-function #'ggtags-eldoc-function)
+;; (setq eldoc-documentation-function #'ggtags-eldoc-function)
 ;; (add-hook 'ggtags-mode-hook 'eldoc-mode)
 
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-u") 'global-ssh-update)))
+;; (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-u") 'global-ssh-update)))
 ;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-u") 'global-ssh-update)))
 
 ;; trying out tern for smarter JS completion...
