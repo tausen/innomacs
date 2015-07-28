@@ -17,6 +17,8 @@
 (setq org-time-clocksum-use-fractional t)
 
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c C-S-l") 'org-store-link)))
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c M-t C-u") 'org-timestamp-up)))
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c M-t C-d") 'org-timestamp-down)))
 
 ;; languages to allow running from org-mode code blocks
 (org-babel-do-load-languages
