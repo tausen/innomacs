@@ -245,7 +245,7 @@ It expects a properly indented CSS"
 ;; C-c C-d  Find docs of the thing under the cursor. Press again to open the associated URL (if any)
 (add-to-list 'load-path "~/.emacs.d/lib/tern/emacs")
 (autoload 'tern-mode "tern.el" nil t)
-(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+;(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 (eval-after-load 'tern
   '(progn
      (require 'tern-auto-complete)
