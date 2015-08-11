@@ -36,10 +36,10 @@
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-b") 'insert-php-comment)))
 
 ;; EXAMPLE:
-(defun insert-php-this ()
-  (interactive)
-  (insert "$this->"))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t") 'insert-php-this)))
+;; (defun insert-php-this ()
+;;   (interactive)
+;;   (insert "$this->"))
+;;(remove-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t") 'insert-php-this)))
 
 ;;;;;;; WEB ;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -204,36 +204,36 @@ It expects a properly indented CSS"
 
 ;; Auto-completion etc. using gtags (requires gnu global, http://www.gnu.org/software/global/, and pygments plug-in parser https://github.com/yoshizow/global-pygments-plugin)
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "M-i") 'ac-complete-gtags)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-.") 'ggtags-find-tag-dwim)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-j") 'ggtags-find-definition)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-c") 'tags-loop-continue)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-r") 'ggtags-find-reference)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-s") 'ggtags-find-other-symbol)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-f") 'ggtags-find-file)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-m") 'pop-tag-mark)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-p") 'ggtags-prev-mark)))
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-n") 'ggtags-next-mark))) 
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C--") 'ggtags-grep)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-.") 'ggtags-find-tag-dwim)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-j") 'ggtags-find-definition)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-c") 'tags-loop-continue)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-r") 'ggtags-find-reference)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-s") 'ggtags-find-other-symbol)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-f") 'ggtags-find-file)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-m") 'pop-tag-mark)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-p") 'ggtags-prev-mark)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-n") 'ggtags-next-mark))) 
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C--") 'ggtags-grep)))
 
 ;; trying out tern for most of these - lets use gtags for what tern does not support
 ;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "M-i") 'ac-complete-gtags)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-.") 'ggtags-find-tag-dwim)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-j") 'ggtags-find-definition)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-c") 'tags-loop-continue)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-r") 'ggtags-find-reference)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-s") 'ggtags-find-other-symbol)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-f") 'ggtags-find-file)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-m") 'pop-tag-mark)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-p") 'ggtags-prev-mark)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-n") 'ggtags-next-mark)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C--") 'ggtags-grep)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-.") 'ggtags-find-tag-dwim)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-j") 'ggtags-find-definition)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-c") 'tags-loop-continue)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-r") 'ggtags-find-reference)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-s") 'ggtags-find-other-symbol)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-f") 'ggtags-find-file)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-m") 'pop-tag-mark)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-p") 'ggtags-prev-mark)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-n") 'ggtags-next-mark)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C--") 'ggtags-grep)))
 
 ;; TODO: figure out how to use this
 ;; (setq eldoc-documentation-function #'ggtags-eldoc-function)
 ;; (add-hook 'ggtags-mode-hook 'eldoc-mode)
 
-;; (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-u") 'global-ssh-update)))
-;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-u") 'global-ssh-update)))
+;; (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-u") 'global-ssh-update)))
+;; (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-u") 'global-ssh-update)))
 
 ;; trying out tern for smarter JS completion...
 ;; http://ternjs.net/doc/manual.html#emacs
@@ -251,8 +251,8 @@ It expects a properly indented CSS"
      (require 'tern-auto-complete)
      (tern-ac-setup)))
 (add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "M-i") 'tern-ac-complete)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-j") 'tern-find-definition)))
-(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-m") 'tern-pop-find-definition)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-j") 'tern-find-definition)))
+(add-hook 'js2-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-m") 'tern-pop-find-definition)))
 
 ;; define options, commands and keybindings for running "global -u" from a dir on a remote shell
 ;; to set up, do M-x customize-group global-ssh
@@ -285,7 +285,7 @@ It expects a properly indented CSS"
    (interactive)
    (shell-command (concat "ssh -p " global-ssh-port " " global-ssh-username "@" global-ssh-host " 'cd " global-ssh-path " && global -u'")))
 
-(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-- C-d") 'ggtags-set-global-scope)))
+(add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-t C-d") 'ggtags-set-global-scope)))
 
 (setq ggtags-global-scope nil)
 
