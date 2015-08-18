@@ -35,6 +35,9 @@
   )
 (add-hook 'php-mode-hook (lambda () (local-set-key (kbd "C-c C-b") 'insert-php-comment)))
 
+(add-hook 'php-mode-hook (lambda () (setq comment-start "/*"
+                                          comment-end   "*/")))
+
 ;; EXAMPLE:
 ;; (defun insert-php-this ()
 ;;   (interactive)
